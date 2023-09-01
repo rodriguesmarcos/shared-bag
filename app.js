@@ -12,7 +12,9 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 // Enable CORS for all routes
-app.use(cors());
+app.use(cors({
+  origin: '*'
+}));
 
 // Serve static files (e.g., HTML, CSS, JS)
 app.use(express.static(__dirname + '/public'));
